@@ -7,12 +7,28 @@
 
 namespace Pyz\Yves\CustomerPage;
 
+use Spryker\Yves\Kernel\Container;
 use SprykerShop\Yves\AgentPage\Plugin\FixAgentTokenAfterCustomerAuthenticationSuccessPlugin;
 use SprykerShop\Yves\CustomerPage\CustomerPageDependencyProvider as SprykerShopCustomerPageDependencyProvider;
 use SprykerShop\Yves\CustomerReorderWidget\Plugin\CustomerPage\CustomerReorderWidgetPlugin;
 
 class CustomerPageDependencyProvider extends SprykerShopCustomerPageDependencyProvider
 {
+    /**
+     * @param \Spryker\Yves\Kernel\Container $container
+     *
+     * @return \Spryker\Yves\Kernel\Container
+     */
+    public function provideDependencies(Container $container): Container
+    {
+        $container = parent::provideDependencies($container);
+
+        return $container;
+    }
+
+    // TODO: Add the method `addTrainingClient` and call it in the `provideDependencies()`
+    // Hint: The same was already done for another module here: `src/Pyz/Yves/TrainingPage/TrainingPageDependencyProvider.php`
+
     /**
      * @return string[]
      */
