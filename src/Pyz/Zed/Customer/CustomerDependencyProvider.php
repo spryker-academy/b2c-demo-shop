@@ -28,6 +28,8 @@ class CustomerDependencyProvider extends SprykerCustomerDependencyProvider
      */
     public const NEWSLETTER_FACADE = 'newsletter facade';
 
+    public const FACADE_TRAINING = 'FACADE_TRAINING';
+
     /**
      * @param \Spryker\Zed\Kernel\Container $container
      *
@@ -47,6 +49,10 @@ class CustomerDependencyProvider extends SprykerCustomerDependencyProvider
 
         return $container;
     }
+
+    // TODO: Add the method `addTrainingFacade` and call it in the `provideCommunicationLayerDependencies()`
+    // Hint-1: For the right syntax have a look at `addPyzFacadeSales()`
+    // Hint-2: Use the constant `FACADE_TRAINING`
 
     /**
      * @return array<\Spryker\Zed\Customer\Dependency\Plugin\CustomerAnonymizerPluginInterface>
