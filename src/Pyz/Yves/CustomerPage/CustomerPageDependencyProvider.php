@@ -15,6 +15,21 @@ use SprykerShop\Yves\SessionAgentValidation\Plugin\CustomerPage\UpdateAgentSessi
 class CustomerPageDependencyProvider extends SprykerShopCustomerPageDependencyProvider
 {
     /**
+     * @param \Spryker\Yves\Kernel\Container $container
+     *
+     * @return \Spryker\Yves\Kernel\Container
+     */
+    public function provideDependencies(Container $container): Container
+    {
+        $container = parent::provideDependencies($container);
+
+        return $container;
+    }
+
+    // TODO: Add the method `addTrainingClient` and call it in the `provideDependencies()`
+    // Hint: The same was already done for another module here: `src/Pyz/Yves/TrainingPage/TrainingPageDependencyProvider.php`
+
+    /**
      * @return array<string>
      */
     protected function getCustomerOverviewWidgetPlugins(): array
