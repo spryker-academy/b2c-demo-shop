@@ -96,8 +96,7 @@ class OmsDependencyProvider extends SprykerOmsDependencyProvider
             $commandCollection->add(new SendEventPaymentRefundPendingPlugin(), 'Payment/SendEventPaymentRefundPending');
             $commandCollection->add(new SendEventPaymentCancelReservationPendingPlugin(), 'Payment/SendEventPaymentCancelReservationPending');
 
-            // TODO-1: Add the PayCommandPlugin to the command collection and use the same name as in the State Machine definition
-            // Hint-1: Use the same exact same string, including the slash.
+            $commandCollection->add(new PayCommandPlugin(), 'Oms/Pay');
 
             return $commandCollection;
         });
@@ -116,9 +115,7 @@ class OmsDependencyProvider extends SprykerOmsDependencyProvider
             $conditionCollection
             ->add(new IsGiftCardConditionPlugin(), 'GiftCard/IsGiftCard');
 
-            // TODO-2: Add the IsAuthorizedConditionPlugin to the condition collection and use the same name as in the State Machine definition
-            // Hint-1: Use the same exact same string, including the slash.
-            // Hint-2: We use the variable `$conditionCollection` and the syntax is the same we used for adding the command.
+            $conditionCollection->add(new IsAuthorizedConditionPlugin(), 'Oms/IsAuthorized');
 
             return $conditionCollection;
         });
