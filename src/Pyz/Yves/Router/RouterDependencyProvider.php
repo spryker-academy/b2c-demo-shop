@@ -127,8 +127,7 @@ class RouterDependencyProvider extends SprykerRouterDependencyProvider
             new ConfigurableBundleWidgetAsyncRouteProviderPlugin(),
             new OrderCustomReferenceWidgetAsyncRouteProviderPlugin(),
             new ProductComparisonPageRouteProviderPlugin(),
-            // TODO: Add the RouteProviderPlugin of the AntelopePage module
-
+            new AntelopePageRouteProviderPlugin(),
         ];
     }
 
