@@ -7,6 +7,8 @@
 
 namespace Pyz\Zed\Oms;
 
+use Pyz\Zed\Oms\Communication\Plugin\Oms\Command\PayCommandPlugin;
+use Pyz\Zed\Oms\Communication\Plugin\Oms\Condition\IsAuthorizedConditionPlugin;
 use Pyz\Zed\Oms\Communication\Plugin\Oms\InitiationTimeoutProcessorPlugin;
 use Spryker\Zed\Availability\Communication\Plugin\Oms\AvailabilityReservationPostSaveTerminationAwareStrategyPlugin;
 use Spryker\Zed\GiftCard\Communication\Plugin\Oms\Command\CreateGiftCardCommandPlugin;
@@ -105,6 +107,9 @@ class OmsDependencyProvider extends SprykerOmsDependencyProvider
             $commandCollection->add(new SalesOrderWarehouseAllocationCommandPlugin(), 'WarehouseAllocation/WarehouseAllocate');
             $commandCollection->add(new SubmitPaymentTaxInvoicePlugin(), 'TaxApp/SubmitPaymentTaxInvoice');
 
+            // TODO-1: Add the PayCommandPlugin to the command collection and use the same name as in the State Machine definition
+            // Hint-1: Use the same exact same string, including the slash.
+
             return $commandCollection;
         });
 
@@ -123,6 +128,10 @@ class OmsDependencyProvider extends SprykerOmsDependencyProvider
             $conditionCollection->add(new IsPickingListGenerationFinishedConditionPlugin(), 'PickingList/isPickingListGenerationFinished');
             $conditionCollection->add(new IsPickingStartedConditionPlugin(), 'PickingList/isPickingStarted');
             $conditionCollection->add(new IsPickingFinishedConditionPlugin(), 'PickingList/isPickingFinished');
+
+            // TODO-2: Add the IsAuthorizedConditionPlugin to the condition collection and use the same name as in the State Machine definition
+            // Hint-1: Use the same exact same string, including the slash.
+            // Hint-2: We use the variable `$conditionCollection` and the syntax is the same we used for adding the command.
 
             return $conditionCollection;
         });
