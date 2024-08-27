@@ -7,8 +7,6 @@
 
 namespace Pyz\Zed\Publisher;
 
-use Pyz\Shared\AntelopeSearch\AntelopeSearchConfig;
-use Pyz\Zed\AntelopeSearch\Communication\Plugin\Publisher\AntelopeWritePublisherPlugin;
 use Spryker\Shared\GlossaryStorage\GlossaryStorageConfig;
 use Spryker\Shared\PublishAndSynchronizeHealthCheck\PublishAndSynchronizeHealthCheckConfig;
 use Spryker\Zed\AssetStorage\Communication\Plugin\Publisher\Asset\AssetDeletePublisherPlugin;
@@ -137,7 +135,6 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             $this->getStoreStoragePlugins(),
             $this->getAssetStoragePlugins(),
             $this->getCustomerStoragePlugins(),
-            $this->getProductExportPlugins(),
             // TODO-2: Add the method created at TODO-1 to the returned array: getAntelopeSearchPlugins()
             $this->getProductMessageBrokerPlugins(),
         );
