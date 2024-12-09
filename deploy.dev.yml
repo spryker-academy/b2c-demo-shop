@@ -1,6 +1,6 @@
 version: '0.1'
 
-namespace: spryker_b2c_dev
+namespace: b2c-demoshop-202410_dev
 tag: 'dev'
 
 environment: docker.dev
@@ -9,6 +9,7 @@ image:
     php:
         enabled-extensions:
             - blackfire
+            - newrelic
     environment:
         SPRYKER_PRODUCT_CONFIGURATOR_HOST: date-time-configurator-example.spryker.local
         SPRYKER_PRODUCT_CONFIGURATOR_PORT: 80
@@ -261,3 +262,7 @@ docker:
         mutagen:
             platforms:
                 - macos
+    newrelic:
+        license: eu01xxe997b1376851014c072dcb2d2fFFFFNRAL
+        distribution-tracing:
+            enabled: true
